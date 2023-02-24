@@ -1,7 +1,15 @@
+import { useEffect } from "react";
+import Navbar from "./Navbar";
+
 function App() {
+
+  useEffect(() => {
+    document.title = 'Collection Tracker';
+  }, []);
+
   return (
     <div className="App">
-      <p>test</p>
+      <Navbar />
     </div>
   );
 }

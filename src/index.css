@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+}
+
+* {
+  font-family: Arial;
+}
+
+/* Navbar Styles*/
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 120px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(227, 227, 227);
+}
+
+.webpage-title {
+  margin: 0px;
+  margin-left: 40px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.profile-selector {
+  width: 20%;
+  height: 65%;
+  margin-right: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+}
+
+.profile-selector :active {
+  border-radius: 8px;
+  background: rgb(212, 212, 212);
+}
+
+.profile-selector-contents {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-selector-contents p {
+  font-size: 20px;
+  margin: 0;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.profile-picture {
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 35px;
+}

@@ -6,7 +6,7 @@ function Navbar() {
       <p className='webpage-title'>Collection Tracker</p>
       <button className="profile-selector">
         <span className="profile-selector-contents">
-          <p>Profile</p>
+          <p>Login</p>
           <img className="profile-picture" src={profilePicture} alt="profile icon" />
         </span>
        </button>

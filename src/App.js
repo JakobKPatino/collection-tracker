@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Body from "./Body";
 import Navbar from "./Navbar";
 
 function App() {
@@ -10,6 +11,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <div className="Body">
+        <Body />
+      </div>
     </div>
   );
 }

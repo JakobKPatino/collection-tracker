@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  height: 3000px;
 }
 
 * {
@@ -22,6 +21,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
+  background-color: white;
 }
 
 .webpage-title {
@@ -32,17 +33,15 @@ body {
 }
 
 .profile-selector {
-  min-width: 20%;
-  max-width: 40%;
-  height: 65%;
-  margin-right: 40px;
+  width: 100%;
+  height: 100%;
   padding: 0;
   border: none;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .profile-selector :active {
-  border-radius: 8px;
   background: rgb(212, 212, 212);
 }
 
@@ -58,6 +57,7 @@ body {
   font-size: 20px;
   margin: 0 10px;
   font-weight: bold;
+  position: relative;
 }
 
 .profile-picture {
@@ -67,9 +67,70 @@ body {
   margin-right: 10px;
 }
 
+.nav-profile-dropdown {
+  min-width: 20%;
+  max-width: 40%;
+  height: 65%;
+  margin-right: 40px;
+  position: relative;
+}
+
+.profile-dropdown-items {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-dropdown-items :active {
+  background: rgb(212, 212, 212);
+}
+
+.dropdown-item {
+  font-size: 16px;
+  height: 30px;
+  border: none;
+  border-top: 1px solid black;
+}
+
+.show-nav-dropdown {
+  display: flex;
+}
+
+.adjust-nav-dropdown-border {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 
 /* Body Styles */
 
 .Body {
-  margin-top: 120px;
+  position: absolute;
+  height: 3000px;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Account Manager Styles */
+
+.account-manager {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.account-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 8px;
 }

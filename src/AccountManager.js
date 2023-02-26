@@ -6,7 +6,14 @@ function AccountManager({setVisiblePage}) {
 
   return (
     <main className="account-manager">
-      <button className="change" onClick={handleClick}>Go to Page 2</button>
+      <div className="account-options">
+        <div className="new-account">
+          <h1>Create a new profile</h1>
+        </div>
+        <div className="existing-account">
+          <button className="change" onClick={handleClick}>Select existing profile</button>
+        </div>
+      </div>
     </main>
   );
 }

@@ -1,11 +1,11 @@
 function Test2({setVisiblePage}) {
 
   function handleClick() {
-    setVisiblePage('Test1');
+    setVisiblePage('AccountManager');
   }
 
   return (
-    <main id="test2">
+    <main>
       <button className="change" onClick={handleClick}>Go to Page 1</button>
     </main>
   );

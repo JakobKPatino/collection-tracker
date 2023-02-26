@@ -96,7 +96,7 @@ body {
   border-top: 1px solid black;
 }
 
-.show-nav-dropdown {
+.show-dropdown {
   display: flex;
 }
 

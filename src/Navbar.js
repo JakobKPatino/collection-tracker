@@ -5,9 +5,16 @@ function Navbar({profiles}) {
 
   let [profileName, setProfileName] = useState('Login')
 
-  function handleClick() {
+  function handleToggleDropdown() {
     document.getElementsByClassName('profile-selector')[0].classList.toggle('adjust-nav-dropdown-border');
-    document.getElementsByClassName('profile-dropdown-items')[0].classList.toggle('show-nav-dropdown');
+    document.getElementsByClassName('profile-dropdown-items')[0].classList.toggle('show-dropdown');
+  }
+
+  window.onclick = function(event) {
+    if (!document.getElementsByClassName('profile-selector')[0].contains(event.target) &&
+        document.getElementsByClassName('profile-dropdown-items')[0].classList.contains('show-dropdown')) {
+          handleToggleDropdown();
+    }
   }
 
   function handleProfileSelection(profileName) {
@@ -18,7 +25,7 @@ function Navbar({profiles}) {
     <nav className="navbar">
       <p className='webpage-title'>Collection Tracker</p>
       <div className="nav-profile-dropdown">
-        <button className="profile-selector" onClick={handleClick}>
+        <button className="profile-selector" onClick={handleToggleDropdown}>
           <span className="profile-selector-contents">
             <p>{profileName}</p>
             <img className="profile-picture" src={profilePicture} alt="profile icon" />

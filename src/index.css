@@ -75,7 +75,94 @@ body {
   position: relative;
 }
 
-.profile-dropdown-items {
+
+/* Body Styles */
+
+.Body {
+  position: absolute;
+  height: 3000px;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Account Manager Styles */
+
+.account-manager {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.existing-new-delete {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.existing-account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.existing-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.existing-profile-dropdown {
+  position: relative;
+}
+
+.existing-profile {
+  position: relative;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 180px;
+}
+
+.new-account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.delete-account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Dropdown Styles */
+
+.nav-profile-dropdown-items,
+.body-profile-dropdown-items {
   position: absolute;
   display: none;
   flex-direction: column;
@@ -100,37 +187,7 @@ body {
   display: flex;
 }
 
-.adjust-nav-dropdown-border {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-
-/* Body Styles */
-
-.Body {
-  position: absolute;
-  height: 3000px;
-  top: 120px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-/* Account Manager Styles */
-
-.account-manager {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.account-options {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  border: 2px solid black;
-  border-radius: 8px;
+.adjust-dropdown-border {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

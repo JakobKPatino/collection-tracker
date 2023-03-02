@@ -127,7 +127,6 @@ body {
 }
 
 .existing-profile {
-  position: relative;
   font-size: 16px;
   border: none;
   border-radius: 8px;
@@ -147,6 +146,27 @@ body {
   background-color: white;
 }
 
+.new-profile-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.new-profile-input {
+  width: 155px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.add-profile-button {
+  margin-left: 4px;
+  border: none;
+  border-radius: 8px;
+  height: 24px;
+}
+
 .delete-account-container {
   display: flex;
   flex-direction: column;
@@ -159,10 +179,31 @@ body {
   background-color: white;
 }
 
+.delete-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-profile-dropdown {
+  position: relative;
+}
+
+.delete-profile {
+  position: relative;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 180px;
+}
+
 /* Dropdown Styles */
 
 .nav-profile-dropdown-items,
-.body-profile-dropdown-items {
+.select-profile-dropdown-items,
+.delete-profile-dropdown-items {
   position: absolute;
   display: none;
   flex-direction: column;
@@ -172,7 +213,9 @@ body {
   overflow: hidden;
 }
 
-.profile-dropdown-items :active {
+.nav-profile-dropdown-items :active,
+.select-profile-dropdown-items :active,
+.delete-profile-dropdown-items :active {
   background: rgb(212, 212, 212);
 }
 

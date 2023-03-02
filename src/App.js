@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 function App() {
 
   const [profiles, setProfiles] = useState([]);
+
   let [currentProfileName, setCurrentProfileName] = useState('Login')
 
   useEffect(() => {
@@ -20,9 +21,12 @@ function App() {
     if (location === 'nav') {
       document.getElementsByClassName('profile-selector')[0].classList.toggle('adjust-dropdown-border');
       document.getElementsByClassName('nav-profile-dropdown-items')[0].classList.toggle('show-dropdown');
-    } else if (location === 'body') {
+    } else if (location === 'select') {
       document.getElementsByClassName('existing-profile')[0].classList.toggle('adjust-dropdown-border');
-      document.getElementsByClassName('body-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+      document.getElementsByClassName('select-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+    } else if (location === 'delete') {
+      document.getElementsByClassName('delete-profile')[0].classList.toggle('adjust-dropdown-border');
+      document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.toggle('show-dropdown');
     }
   }
 
@@ -32,8 +36,12 @@ function App() {
           handleToggleDropdown('nav');
     }
     if (!document.getElementsByClassName('existing-profile')[0].contains(event.target) &&
-        document.getElementsByClassName('body-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
-          handleToggleDropdown('body');
+        document.getElementsByClassName('select-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
+          handleToggleDropdown('select');
+    }
+    if (!document.getElementsByClassName('delete-profile')[0].contains(event.target) &&
+        document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
+          handleToggleDropdown('delete');
     }
   }
 
@@ -43,7 +51,7 @@ function App() {
       handleToggleDropdown={handleToggleDropdown}/>
       <div className="Body">
         <Body profiles={profiles} handleProfileSelection={handleProfileSelection} 
-        handleToggleDropdown={handleToggleDropdown}/>
+        handleToggleDropdown={handleToggleDropdown} setProfiles={setProfiles}/>
       </div>
     </div>
   );

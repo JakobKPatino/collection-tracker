@@ -16,7 +16,7 @@ function Navbar({profiles, currentProfileName, handleProfileSelection, handleTog
           </span>
         </button>
         <ProfileDropdown profiles={profiles} handleProfileSelection={handleProfileSelection}
-        profileDropdownItems={'nav-profile-dropdown-items'}/>
+        profileDropdownItems={'nav-profile-dropdown-items'} buttonAction={'login'}/>
       </div>  
       
 

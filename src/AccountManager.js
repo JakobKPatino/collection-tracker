@@ -38,7 +38,7 @@ function AccountManager({setVisiblePage, profiles, handleProfileSelection,
                 Select existing profile
               </button>
               <ProfileDropdown profiles={profiles} handleProfileSelection={handleProfileSelection}
-              profileDropdownItems={'select-profile-dropdown-items'}/>
+              profileDropdownItems={'select-profile-dropdown-items'} buttonAction={'login'}/>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ function AccountManager({setVisiblePage, profiles, handleProfileSelection,
               Delete exisitng profile
             </button>
             <ProfileDropdown profiles={profiles} handleProfileSelection={handleProfileSelection}
-            profileDropdownItems={'delete-profile-dropdown-items'}/>
+            profileDropdownItems={'delete-profile-dropdown-items'} buttonAction={'delete'}/>
           </div>
         </div>
       </div>

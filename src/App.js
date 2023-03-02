@@ -13,8 +13,25 @@ function App() {
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }, []);
 
-  function handleProfileSelection(profileName) {
-    setCurrentProfileName(profileName);
+  function handleProfileSelection(event, profileName, action) {
+    if (action === 'login') {
+      setCurrentProfileName(profileName);
+
+    } else if (action === 'delete') {
+      let newProfiles = [];
+      let newId = 0;
+      for (const profile of profiles) {
+        if (profile.id !== Number(event.target.id)) {
+          newId += 1;
+          profile.id = newId;
+          newProfiles.push(profile);
+        } else if (profile.id === Number(event.target.id)) {
+          setCurrentProfileName('Login');
+        }
+      }
+      localStorage.setItem('profiles', JSON.stringify(newProfiles));
+      setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
+    }
   }
 
   function handleToggleDropdown(location) {

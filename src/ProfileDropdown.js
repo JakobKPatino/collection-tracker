@@ -1,9 +1,11 @@
-function ProfileDropdown({profiles, handleProfileSelection, profileDropdownItems}) {
+function ProfileDropdown({profiles, handleProfileSelection, 
+  profileDropdownItems, buttonAction}) {
 
   return (
     <div className={profileDropdownItems}>
       {profiles.map((profile) => (
-        <button className='dropdown-item' key={profile.id} onClick={() => handleProfileSelection(profile.profileName)}>
+        <button className='dropdown-item' id={profile.id} key={profile.id} 
+                onClick={(event) => handleProfileSelection(event, profile.profileName, buttonAction)}>
           {profile.profileName}
         </button>
       ))}

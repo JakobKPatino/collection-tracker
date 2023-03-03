@@ -36,6 +36,11 @@ function App() {
       }
       localStorage.setItem('profiles', JSON.stringify(newProfiles));
       setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
+
+      if (profiles.length === 1) {
+        document.getElementsByClassName('delete-profile')[0].classList.toggle('adjust-dropdown-border');
+        document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+      }
     }
   }
 
@@ -50,6 +55,14 @@ function App() {
       } else if (location === 'delete') {
         document.getElementsByClassName('delete-profile')[0].classList.toggle('adjust-dropdown-border');
         document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+      }
+    }
+    if (currentProfile !== null) {
+      if (currentProfile.collections.length !== 0) {
+        if (location === 'collections') {
+          document.getElementsByClassName('collections')[0].classList.toggle('adjust-dropdown-border');
+          document.getElementsByClassName('collections-dropdown-items')[0].classList.toggle('show-dropdown');
+        }
       }
     }
   }
@@ -67,6 +80,11 @@ function App() {
       if (!document.getElementsByClassName('delete-profile')[0].contains(event.target) &&
           document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
             handleToggleDropdown('delete');
+      }
+    } else if (visiblePage === 'Collection Page') {
+      if (!document.getElementsByClassName('collections')[0].contains(event.target) &&
+          document.getElementsByClassName('collections-dropdown-items')[0].classList.contains('show-dropdown')) {
+            handleToggleDropdown('collections');
       }
     }
   }

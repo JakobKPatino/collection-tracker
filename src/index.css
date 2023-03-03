@@ -127,18 +127,13 @@ body {
   position: relative;
 }
 
-.existing-profile {
+.existing-profile,
+.delete-profile {
   font-size: 16px;
   border: none;
   border-radius: 8px;
   height: 40px;
   width: 180px;
-}
-
-.existing-profile:active,
-.delete-profile:active,
-.add-profile-button:active {
-  background: rgb(212, 212, 212);
 }
 
 .new-account-container {
@@ -197,24 +192,49 @@ body {
   position: relative;
 }
 
-.delete-profile {
+/* Collection Page Styles */
+
+.collection-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+.collection-dropdown-container {
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.collection-dropdown {
   position: relative;
-  font-size: 16px;
+  height: 40px;
+  margin-left: 5px;
+}
+
+.collections {
+  font-size: 18px;
   border: none;
   border-radius: 8px;
   height: 40px;
-  width: 180px;
+  width: 200px;
 }
 
-/* Collection Page Styles */
-
-
+.collection-display-container {
+  border: 1px solid black;
+  width: 100%;
+}
 
 /* Dropdown Styles */
 
 .nav-profile-dropdown-items,
 .select-profile-dropdown-items,
-.delete-profile-dropdown-items {
+.delete-profile-dropdown-items,
+.collections-dropdown-items {
   position: absolute;
   display: none;
   flex-direction: column;
@@ -224,9 +244,14 @@ body {
   overflow: hidden;
 }
 
+.existing-profile:active,
+.delete-profile:active,
+.add-profile-button:active,
+.collections:active,
 .nav-profile-dropdown-items :active,
 .select-profile-dropdown-items :active,
-.delete-profile-dropdown-items :active {
+.delete-profile-dropdown-items :active,
+.collections-dropdown-items :active {
   background: rgb(212, 212, 212);
 }
 

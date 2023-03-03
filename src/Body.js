@@ -11,7 +11,7 @@ function Body({profiles, handleProfileSelection,
       handleProfileSelection={handleProfileSelection} handleToggleDropdown={handleToggleDropdown}
       setProfiles={setProfiles}/>}
       {visiblePage === 'Collection Page' && <CollectionPage setVisiblePage={setVisiblePage} 
-      currentProfile={currentProfile}/>}
+      currentProfile={currentProfile} handleToggleDropdown={handleToggleDropdown}/>}
     </main>
   );
 }

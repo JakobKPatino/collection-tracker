@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
 
-function AccountManager({setVisiblePage, profiles, handleProfileSelection, 
+function AccountManager({profiles, handleProfileSelection, 
   handleToggleDropdown, setProfiles}) {
 
   const [newProfileName, setNewProfileName] = useState('');
@@ -12,6 +12,15 @@ function AccountManager({setVisiblePage, profiles, handleProfileSelection,
     const profileId = profiles.length + 1;
     const newProfile = {
       profileName: newProfileName,
+      collections: [{
+        title: 'Temp Collection',
+        collectionItems: [{
+          name: 'Temp Item',
+          description: '',
+          id: 1
+        }],
+        id: 1
+      }],
       id: profileId
     }
 

@@ -1,7 +1,8 @@
 import profilePicture from './images/joshu.jpg';
 import ProfileDropdown from './ProfileDropdown';
 
-function Navbar({profiles, currentProfileName, handleProfileSelection, handleToggleDropdown}) {
+function Navbar({profiles, currentProfileName, 
+  handleProfileSelection, handleToggleDropdown}) {
 
   
 

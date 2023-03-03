@@ -1,18 +1,17 @@
-import { useState } from "react";
 import AccountManager from "./AccountManager";
-import Test2 from "./Test2";
+import CollectionPage from "./CollectionPage";
 
 function Body({profiles, handleProfileSelection,
-  handleToggleDropdown, setProfiles}) {
-
-  const [visiblePage, setVisiblePage] = useState('AccountManager');
+  handleToggleDropdown, setProfiles, currentProfile,
+  visiblePage, setVisiblePage}) {
 
   return (
     <main>
-      {visiblePage === 'AccountManager' && <AccountManager setVisiblePage={setVisiblePage} profiles={profiles} 
+      {visiblePage === 'Account Manager' && <AccountManager profiles={profiles} 
       handleProfileSelection={handleProfileSelection} handleToggleDropdown={handleToggleDropdown}
       setProfiles={setProfiles}/>}
-      {visiblePage === 'Test2' && <Test2 setVisiblePage={setVisiblePage}/>}
+      {visiblePage === 'Collection Page' && <CollectionPage setVisiblePage={setVisiblePage} 
+      currentProfile={currentProfile}/>}
     </main>
   );
 }

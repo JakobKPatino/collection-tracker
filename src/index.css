@@ -89,7 +89,8 @@ body {
 
 /* Account Manager Styles */
 
-.account-manager {
+.account-manager,
+.collection-page {
   margin-top: 30px;
   display: flex;
   justify-content: center;
@@ -132,6 +133,12 @@ body {
   border-radius: 8px;
   height: 40px;
   width: 180px;
+}
+
+.existing-profile:active,
+.delete-profile:active,
+.add-profile-button:active {
+  background: rgb(212, 212, 212);
 }
 
 .new-account-container {
@@ -198,6 +205,10 @@ body {
   height: 40px;
   width: 180px;
 }
+
+/* Collection Page Styles */
+
+
 
 /* Dropdown Styles */
 

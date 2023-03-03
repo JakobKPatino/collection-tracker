@@ -6,16 +6,20 @@ function App() {
 
   const [profiles, setProfiles] = useState([]);
 
-  let [currentProfileName, setCurrentProfileName] = useState('Login')
+  const [currentProfileName, setCurrentProfileName] = useState('Login')
+  const [currentProfile, setCurrentProfile] = useState(null)
+  const [visiblePage, setVisiblePage] = useState('Account Manager');
 
   useEffect(() => {
     document.title = 'Collection Tracker';
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }, []);
 
-  function handleProfileSelection(event, profileName, action) {
+  function handleProfileSelection(event, profile, action) {
     if (action === 'login') {
-      setCurrentProfileName(profileName);
+      setCurrentProfileName(profile.profileName);
+      setCurrentProfile(profile);
+      setVisiblePage('Collection Page');
 
     } else if (action === 'delete') {
       let newProfiles = [];
@@ -27,6 +31,7 @@ function App() {
           newProfiles.push(profile);
         } else if (profile.id === Number(event.target.id)) {
           setCurrentProfileName('Login');
+          setCurrentProfile(null);
         }
       }
       localStorage.setItem('profiles', JSON.stringify(newProfiles));
@@ -35,15 +40,17 @@ function App() {
   }
 
   function handleToggleDropdown(location) {
-    if (location === 'nav') {
-      document.getElementsByClassName('profile-selector')[0].classList.toggle('adjust-dropdown-border');
-      document.getElementsByClassName('nav-profile-dropdown-items')[0].classList.toggle('show-dropdown');
-    } else if (location === 'select') {
-      document.getElementsByClassName('existing-profile')[0].classList.toggle('adjust-dropdown-border');
-      document.getElementsByClassName('select-profile-dropdown-items')[0].classList.toggle('show-dropdown');
-    } else if (location === 'delete') {
-      document.getElementsByClassName('delete-profile')[0].classList.toggle('adjust-dropdown-border');
-      document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+    if (profiles.length !== 0) {
+      if (location === 'nav') {
+        document.getElementsByClassName('profile-selector')[0].classList.toggle('adjust-dropdown-border');
+        document.getElementsByClassName('nav-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+      } else if (location === 'select') {
+        document.getElementsByClassName('existing-profile')[0].classList.toggle('adjust-dropdown-border');
+        document.getElementsByClassName('select-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+      } else if (location === 'delete') {
+        document.getElementsByClassName('delete-profile')[0].classList.toggle('adjust-dropdown-border');
+        document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.toggle('show-dropdown');
+      }
     }
   }
 
@@ -52,23 +59,27 @@ function App() {
         document.getElementsByClassName('nav-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
           handleToggleDropdown('nav');
     }
-    if (!document.getElementsByClassName('existing-profile')[0].contains(event.target) &&
+    if (visiblePage === 'Account Manager') {
+      if (!document.getElementsByClassName('existing-profile')[0].contains(event.target) &&
         document.getElementsByClassName('select-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
           handleToggleDropdown('select');
-    }
-    if (!document.getElementsByClassName('delete-profile')[0].contains(event.target) &&
-        document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
-          handleToggleDropdown('delete');
+      }
+      if (!document.getElementsByClassName('delete-profile')[0].contains(event.target) &&
+          document.getElementsByClassName('delete-profile-dropdown-items')[0].classList.contains('show-dropdown')) {
+            handleToggleDropdown('delete');
+      }
     }
   }
 
   return (
     <div className="App">
-      <Navbar profiles={profiles} currentProfileName={currentProfileName} handleProfileSelection={handleProfileSelection}
+      <Navbar profiles={profiles} currentProfileName={currentProfileName} 
+      handleProfileSelection={handleProfileSelection}
       handleToggleDropdown={handleToggleDropdown}/>
       <div className="Body">
         <Body profiles={profiles} handleProfileSelection={handleProfileSelection} 
-        handleToggleDropdown={handleToggleDropdown} setProfiles={setProfiles}/>
+        handleToggleDropdown={handleToggleDropdown} setProfiles={setProfiles}
+        currentProfile={currentProfile} visiblePage={visiblePage} setVisiblePage={setVisiblePage}/>
       </div>
     </div>
   );

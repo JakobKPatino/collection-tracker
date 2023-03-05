@@ -2,16 +2,19 @@ import { useState } from "react";
 
 function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) {
 
-  const [collectionName, setCollectionName] = useState('');
-  const [collectionDescription, setCollectionDescription] = useState('');
+  const [currentCollection, setCurrentCollecion] = useState({
+    collectionItems: [],
+    id: 1
+  });
+  const [currentCollectionName, setCurrentCollectionName] = useState('Select collection');
 
   function handleClick() {
     setVisiblePage('Account Manager');
   }
 
   function handleCollectionSelection(collection) {
-    setCollectionName(collection.name);
-    setCollectionDescription(collection.description);
+    setCurrentCollecion(collection);
+    setCurrentCollectionName(collection.name);
   }
 
   return (
@@ -21,20 +24,23 @@ function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) 
           <h2>{currentProfile.profileName}'s Collections:</h2>
           <div className="collection-dropdown">
             <button className="collections" onClick={() => handleToggleDropdown('collections')}>
-              Select collection
+              {currentCollectionName}
             </button>
             <div className="collections-dropdown-items">
               {currentProfile.collections.map((collection) => (
                 <button className='dropdown-item' id={collection.id} 
                         key={collection.id} onClick={() => handleCollectionSelection(collection)}>
-                  {collection.title}
+                  {collection.name}
                 </button>
               ))}
             </div>
           </div>
         </div>
+        {currentCollectionName === 'Select collection' && 
+          <h2>No Collection Selected</h2>}
+        {currentCollectionName !== 'Select collection' &&
         <div className="collection-display-container">
-          {currentProfile.collections[0].collectionItems.map((item) => (
+          {currentCollection.collectionItems.map((item) => (
             <div className="collection-grid-element" key={item.id}>
               <div className="collection-item-container">
                 <div className="collection-image">
@@ -47,7 +53,7 @@ function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) 
               </div>
             </div>
           ))}
-        </div>
+        </div>}
         <button className="change" onClick={handleClick}>
             Go to Account Manager
         </button>

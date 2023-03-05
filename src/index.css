@@ -80,8 +80,10 @@ body {
 
 .Body {
   position: absolute;
-  height: 3000px;
-  top: 120px;
+  overflow-y: scroll;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;

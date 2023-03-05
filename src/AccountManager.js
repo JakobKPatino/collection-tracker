@@ -13,7 +13,7 @@ function AccountManager({profiles, handleProfileSelection,
     const newProfile = {
       profileName: newProfileName,
       collections: [{
-        title: 'Temp Collection',
+        name: 'Temp Collection',
         collectionItems: [{
           name: 'Temporary Collection Item',
           description: newProfileName,
@@ -44,6 +44,34 @@ function AccountManager({profiles, handleProfileSelection,
           id: 7
         }],
         id: 1
+      }, {
+        name: 'Temp Collection 2',
+        collectionItems: [{
+          name: 'Temporary Collection Item 2',
+          description: newProfileName,
+          id: 1
+        }, {
+          name: 'Temp Item 2',
+          description: newProfileName,
+          id: 2
+        }, {
+          name: 'Temp Item 2',
+          description: newProfileName,
+          id: 3
+        }, {
+          name: 'Temp Item 2',
+          description: newProfileName,
+          id: 4
+        }, {
+          name: 'Temp Item 2',
+          description: newProfileName,
+          id: 5
+        }, {
+          name: 'Temp Item 2',
+          description: newProfileName,
+          id: 6
+        }],
+        id: 2
       }],
       id: profileId
     }

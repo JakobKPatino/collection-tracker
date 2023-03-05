@@ -15,9 +15,33 @@ function AccountManager({profiles, handleProfileSelection,
       collections: [{
         title: 'Temp Collection',
         collectionItems: [{
-          name: 'Temp Item',
-          description: '',
+          name: 'Temporary Collection Item',
+          description: newProfileName,
           id: 1
+        }, {
+          name: 'Temp Item',
+          description: newProfileName,
+          id: 2
+        }, {
+          name: 'Temp Item',
+          description: newProfileName,
+          id: 3
+        }, {
+          name: 'Temp Item',
+          description: newProfileName,
+          id: 4
+        }, {
+          name: 'Temp Item',
+          description: newProfileName,
+          id: 5
+        }, {
+          name: 'Temp Item',
+          description: newProfileName,
+          id: 6
+        }, {
+          name: 'Temp Item',
+          description: newProfileName,
+          id: 7
         }],
         id: 1
       }],
@@ -58,7 +82,7 @@ function AccountManager({profiles, handleProfileSelection,
           <form className="new-profile-input-container" onSubmit={handleSubmit}>
             <input className="new-profile-input"
               type="text"
-              maxLength='12'
+              maxLength='10'
               required
               value={newProfileName}
               onChange={(e) => setNewProfileName(e.target.value)}

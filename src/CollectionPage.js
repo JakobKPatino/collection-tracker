@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CollectionDetailsPage from "./CollectionDetailsPage";
 
 function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) {
 
@@ -7,8 +8,9 @@ function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) 
     id: 1
   });
   const [currentCollectionName, setCurrentCollectionName] = useState('Select collection');
+  const [visibleDetails, setVisibleDetails] = useState(false);
 
-  function handleClick() {
+  function handlePageToAccounts() {
     setVisiblePage('Account Manager');
   }
 
@@ -37,8 +39,9 @@ function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) 
           </div>
         </div>
         {currentCollectionName === 'Select collection' && 
-          <h2>No Collection Selected</h2>}
+        <h2>No Collection Selected</h2>}
         {currentCollectionName !== 'Select collection' &&
+        !visibleDetails &&
         <div className="collection-display-container">
           {currentCollection.collectionItems.map((item) => (
             <div className="collection-grid-element" key={item.id}>
@@ -48,13 +51,16 @@ function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown}) 
                 </div>
                 <div className="collection-text">
                   <p className="item-name">{item.name}</p>
-                  <button className="item-details-button">Details</button>
+                  <button className="item-details-button" onClick={() => setVisibleDetails(true)}>
+                    Details
+                    </button>
                 </div>
               </div>
             </div>
           ))}
         </div>}
-        <button className="change" onClick={handleClick}>
+        {visibleDetails && <CollectionDetailsPage setVisibleDetails={setVisibleDetails}/>}
+        <button className="change" onClick={handlePageToAccounts}>
             Go to Account Manager
         </button>
       </div>

@@ -9,6 +9,11 @@ function App() {
   const [currentProfileName, setCurrentProfileName] = useState('Login')
   const [currentProfile, setCurrentProfile] = useState(null)
   const [visiblePage, setVisiblePage] = useState('Account Manager');
+  const [currentCollection, setCurrentCollection] = useState({
+    collectionItems: [],
+  });
+  const [currentCollectionName, setCurrentCollectionName] = useState('Select collection');
+  const [visibleWindow, setVisibleWindow] = useState('none');
 
   useEffect(() => {
     document.title = 'Collection Tracker';
@@ -20,6 +25,11 @@ function App() {
       setCurrentProfileName(profile.profileName);
       setCurrentProfile(profile);
       setVisiblePage('Collection Page');
+      setCurrentCollection({
+        collectionItems: [],
+      });
+      setCurrentCollectionName('Select collection');
+      setVisibleWindow('none')
 
     } else if (action === 'delete') {
       let newProfiles = [];
@@ -97,7 +107,10 @@ function App() {
       <div className="Body">
         <Body profiles={profiles} handleProfileSelection={handleProfileSelection} 
         handleToggleDropdown={handleToggleDropdown} setProfiles={setProfiles}
-        currentProfile={currentProfile} visiblePage={visiblePage} setVisiblePage={setVisiblePage}/>
+        currentProfile={currentProfile} visiblePage={visiblePage} setVisiblePage={setVisiblePage}
+        currentCollection={currentCollection} setCurrentCollection={setCurrentCollection} 
+        visibleWindow={visibleWindow} setVisibleWindow={setVisibleWindow} 
+        currentCollectionName={currentCollectionName} setCurrentCollectionName={setCurrentCollectionName}/>
       </div>
     </div>
   );

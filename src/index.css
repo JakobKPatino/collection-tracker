@@ -246,9 +246,17 @@ body {
   margin-right: 10px;
 }
 
-.collection-display-container {
+.collection-handler {
   border: 1px solid black;
-  width: calc(100% - 20px);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-display-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
@@ -256,8 +264,6 @@ body {
   column-gap: 10px;
   row-gap: 10px;
   padding: 10px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
 .collection-grid-element {
@@ -323,6 +329,20 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
+.delete-collection-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-collection-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  height: 30px;
+  width: 170px;
+}
+
 /* Add Collection Page Styles */
 
 .add-collection-page-container,
@@ -383,7 +403,8 @@ body {
 .collections-dropdown-items :active,
 .add-collection-button:active,
 .add-collection-item-button:active,
-.add-collection-input-button:active {
+.add-collection-input-button:active,
+.delete-collection-button:active {
   background: rgb(212, 212, 212);
 }
 

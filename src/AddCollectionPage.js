@@ -25,7 +25,6 @@ function AddCollectionPage({handleWindowBack, currentProfile, profiles, setProfi
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
 
     setNewCollectionName('');
-    console.log(profiles);
   }
 
   return (

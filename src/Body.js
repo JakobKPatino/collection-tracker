@@ -2,8 +2,9 @@ import AccountManager from "./AccountManager";
 import CollectionPage from "./CollectionPage";
 
 function Body({profiles, handleProfileSelection,
-  handleToggleDropdown, setProfiles, currentProfile,
-  visiblePage, setVisiblePage}) {
+  handleToggleDropdown, setProfiles, currentProfile, visiblePage, 
+  setVisiblePage, currentCollection, setCurrentCollection, visibleWindow,
+  setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
 
   return (
     <main>
@@ -12,7 +13,11 @@ function Body({profiles, handleProfileSelection,
       setProfiles={setProfiles}/>}
       {visiblePage === 'Collection Page' && <CollectionPage setVisiblePage={setVisiblePage} 
       currentProfile={currentProfile} handleToggleDropdown={handleToggleDropdown}
-      profiles={profiles} setProfiles={setProfiles}/>}
+      profiles={profiles} setProfiles={setProfiles} currentCollection={currentCollection}
+      setCurrentCollection={setCurrentCollection} visibleWindow={visibleWindow}
+      setVisibleWindow={setVisibleWindow} currentCollectionName={currentCollectionName}
+      setCurrentCollectionName={setCurrentCollectionName}
+      />}
     </main>
   );
 }

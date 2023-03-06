@@ -1,7 +1,10 @@
-function CollectionDetailsPage({setVisibleDetails}) {
+function CollectionDetailsPage({handleWindowBack}) {
 
   return (
-    <button onClick={() => setVisibleDetails(false)}>Back</button>
+    <div>
+      <p>Collection Details</p>
+      <button onClick={handleWindowBack}>Back</button>
+    </div>
   )
 }
 

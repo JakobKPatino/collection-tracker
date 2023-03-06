@@ -164,7 +164,8 @@ body {
   border-radius: 5px;
 }
 
-.add-profile-button {
+.add-profile-button,
+.add-collection-input-button {
   margin-left: 4px;
   border: none;
   border-radius: 8px;
@@ -204,12 +205,22 @@ body {
   width: 75%;
 }
 
-.collection-dropdown-container {
+.collection-container {
   border: 1px solid black;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.collection-dropdown-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 5px;
 }
 
 .collection-dropdown {
@@ -226,6 +237,15 @@ body {
   width: 200px;
 }
 
+.add-collection-button {
+  font-size: 26px;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
 .collection-display-container {
   border: 1px solid black;
   width: calc(100% - 20px);
@@ -236,6 +256,8 @@ body {
   column-gap: 10px;
   row-gap: 10px;
   padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .collection-grid-element {
@@ -278,12 +300,62 @@ body {
   align-items: center;
 }
 
+.add-collection-item-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+}
+
+.add-collection-item-button {
+  font-size: 40px;
+  border: none;
+  border-radius: 8px;
+  height: 60px;
+  width: 60px;
+}
+
 .temp {
   flex: 110px;
   width: 100px;
   height: 100px;
   margin: 5px;
   background-color: rgb(240, 240, 240);
+}
+
+/* Add Collection Page Styles */
+
+.add-collection-page-container,
+.no-collection-container {
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.enter-collection-name {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.new-collection-input-container {
+  margin-bottom: 20px;
+}
+
+.new-collection-input {
+  width: 254px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.back-button {
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 24px;
 }
 
 /* Dropdown Styles */
@@ -308,7 +380,10 @@ body {
 .nav-profile-dropdown-items :active,
 .select-profile-dropdown-items :active,
 .delete-profile-dropdown-items :active,
-.collections-dropdown-items :active {
+.collections-dropdown-items :active,
+.add-collection-button:active,
+.add-collection-item-button:active,
+.add-collection-input-button:active {
   background: rgb(212, 212, 212);
 }
 

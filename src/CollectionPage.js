@@ -26,6 +26,35 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
     }
   }
 
+  function handleStatus(item) {
+    if (item.owned) {
+      item.owned = false;
+    } else if (!item.owned) {
+      item.owned = true;
+    }
+
+    let updatedCollections = [];
+    for (let collection of currentProfile.collections) {
+      if (collection.id === currentCollection.id) {
+        collection = currentCollection;
+      }
+      updatedCollections.push(collection);
+    }
+
+    currentProfile.collections = updatedCollections;
+
+    let updatedProfiles = [];
+    for (let profile of profiles) {
+      if (profile.id === currentProfile.id) {
+        profile = currentProfile;
+      }
+      updatedProfiles.push(profile);
+    }
+
+    localStorage.setItem('profiles', JSON.stringify(updatedProfiles));
+    setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
+  }
+
   function handleDeleteCollection(event) {
     let updatedCollections = [];
     let newId = 0;
@@ -90,14 +119,19 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
             {currentCollection.collectionItems.map((item) => (
               <div className="collection-grid-element" key={item.id}>
                 <div className="collection-item-container">
-                  <div className="collection-image">
-                    <div className="temp">Temp</div>
-                  </div>
+                  {item.owned && <button className="item-owned" onClick={() => handleStatus(item)}>
+                    Owned
+                  </button>}
+                  {!item.owned && <button className="item-not-owned" onClick={() => handleStatus(item)}>
+                    Not Owned
+                  </button>}
                   <div className="collection-text">
                     <p className="item-name">{item.name}</p>
-                    <button className="item-details-button" onClick={() => setVisibleWindow('collection-details')}>
-                      Details
+                    <div className="item-details-button-container">
+                      <button className="item-details-button" onClick={() => setVisibleWindow('collection-details')}>
+                        Details
                       </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -121,9 +155,11 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
         <CollectionDetailsPage handleWindowBack={handleWindowBack}/>}
         {visibleWindow === 'add-collection' &&
         <AddCollectionPage handleWindowBack={handleWindowBack} currentProfile={currentProfile}
-        profiles={profiles} setProfiles={setProfiles}/>}
+        profiles={profiles} setProfiles={setProfiles} setCurrentCollection={setCurrentCollection} 
+        setCurrentCollectionName={setCurrentCollectionName}/>}
         {visibleWindow === 'add-collection-item' &&
-        <AddCollectionItemPage handleWindowBack={handleWindowBack}/>}
+        <AddCollectionItemPage handleWindowBack={handleWindowBack} currentCollection={currentCollection}
+        currentProfile={currentProfile} profiles={profiles} setProfiles={setProfiles}/>}
         <button className="change" onClick={handlePageToAccounts}>
             Go to Account Manager
         </button>

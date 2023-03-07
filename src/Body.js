@@ -16,8 +16,7 @@ function Body({profiles, handleProfileSelection,
       profiles={profiles} setProfiles={setProfiles} currentCollection={currentCollection}
       setCurrentCollection={setCurrentCollection} visibleWindow={visibleWindow}
       setVisibleWindow={setVisibleWindow} currentCollectionName={currentCollectionName}
-      setCurrentCollectionName={setCurrentCollectionName}
-      />}
+      setCurrentCollectionName={setCurrentCollectionName}/>}
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function AddCollectionPage({handleWindowBack, currentProfile, profiles, setProfiles}) {
+function AddCollectionPage({handleWindowBack, currentProfile, profiles, setProfiles,
+setCurrentCollection, setCurrentCollectionName}) {
 
   const [newCollectionName, setNewCollectionName] = useState('');
 
@@ -17,14 +18,23 @@ function AddCollectionPage({handleWindowBack, currentProfile, profiles, setProfi
     currentProfile.collections.push(newCollection);
 
     let updatedProfiles = [];
-    for (const profile of profiles) {
+    for (let profile of profiles) {
+      if (profile.id === currentProfile.id) {
+        profile = currentProfile;
+      }
       updatedProfiles.push(profile);
     }
 
     localStorage.setItem('profiles', JSON.stringify(updatedProfiles));
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
 
-    setNewCollectionName('');
+    setCurrentCollectionName(newCollectionName);
+    for (const collection of currentProfile.collections) {
+      if (collection.id === newCollection.id) {
+        setCurrentCollection(collection);
+      }
+    }
+    handleWindowBack();
   }
 
   return (
@@ -38,9 +48,9 @@ function AddCollectionPage({handleWindowBack, currentProfile, profiles, setProfi
           value={newCollectionName}
           onChange={(e) => setNewCollectionName(e.target.value)}
         />
-        <button className="add-collection-input-button">Add Collection</button>
+        <button className="add-collection-input-button">Add collection</button>
       </form>
-      <button className="back-button" onClick={handleWindowBack}>Back</button>
+      <button className="back-button" onClick={handleWindowBack}>Back to collection</button>
     </div>
   )
 }

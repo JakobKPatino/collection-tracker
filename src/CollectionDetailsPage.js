@@ -3,7 +3,7 @@ function CollectionDetailsPage({handleWindowBack}) {
   return (
     <div>
       <p>Collection Details</p>
-      <button onClick={handleWindowBack}>Back</button>
+      <button onClick={handleWindowBack}>Back to collection</button>
     </div>
   )
 }

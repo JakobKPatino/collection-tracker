@@ -15,60 +15,73 @@ function AccountManager({profiles, handleProfileSelection,
       collections: [{
         name: 'Temp Collection',
         collectionItems: [{
-          name: 'Temporary Collection Item',
+          name: 'Temp Collection Item 1',
           description: newProfileName,
+          owned: true,
           id: 1
         }, {
           name: 'Temp Item',
           description: newProfileName,
+          owned: true,
           id: 2
         }, {
           name: 'Temp Item',
           description: newProfileName,
+          owned: true,
           id: 3
         }, {
           name: 'Temp Item',
           description: newProfileName,
+          owned: true,
           id: 4
         }, {
           name: 'Temp Item',
           description: newProfileName,
+          owned: true,
           id: 5
         }, {
           name: 'Temp Item',
           description: newProfileName,
+          owned: true,
           id: 6
         }, {
           name: 'Temp Item',
           description: newProfileName,
+          owned: true,
           id: 7
         }],
         id: 1
       }, {
         name: 'Temp Collection 2',
         collectionItems: [{
-          name: 'Temporary Collection Item 2',
+          name: 'Temp Collection Item 2',
           description: newProfileName,
+          owned: true,
           id: 1
         }, {
           name: 'Temp Item 2',
           description: newProfileName,
+          owned: true,
           id: 2
         }, {
           name: 'Temp Item 2',
           description: newProfileName,
+          owned: true,
           id: 3
         }, {
           name: 'Temp Item 2',
           description: newProfileName,
+          owned: true,
           id: 4
         }, {
           name: 'Temp Item 2',
           description: newProfileName,
+          owned: true,
           id: 5
         }, {
           name: 'Temp Item 2',
           description: newProfileName,
+          owned: true,
           id: 6
         }],
         id: 2

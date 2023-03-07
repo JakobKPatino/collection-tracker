@@ -284,26 +284,27 @@ body {
   flex-direction: column;
   flex: 1;
   justify-content: space-between;
-  align-items: center;
   height: 110px;
-  word-wrap: break-word;
+  width: 110px;
+  overflow-wrap: break-word;
 }
 
 .item-name {
   text-align: center;
   margin: 5px 0px;
 }
+
+.item-details-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .item-details-button {
   border: none;
   border-radius: 8px;
   width: 75px;
   height: 25px;
-}
-
-.collection-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .add-collection-item-button-container {
@@ -321,12 +322,23 @@ body {
   width: 60px;
 }
 
-.temp {
-  flex: 110px;
+.item-owned,
+.item-not-owned {
   width: 100px;
   height: 100px;
   margin: 5px;
-  background-color: rgb(240, 240, 240);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.item-owned {
+  background-color: lightgreen;
+}
+
+.item-not-owned {
+  background-color: pink;
 }
 
 .delete-collection-button-container {
@@ -346,6 +358,7 @@ body {
 /* Add Collection Page Styles */
 
 .add-collection-page-container,
+.add-item-page-container,
 .no-collection-container {
   border: 1px solid black;
   width: 100%;
@@ -361,7 +374,8 @@ body {
   margin-bottom: 20px;
 }
 
-.new-collection-input-container {
+.new-collection-input-container,
+.new-item-input-container {
   margin-bottom: 20px;
 }
 
@@ -376,6 +390,65 @@ body {
   border-radius: 8px;
   margin-bottom: 10px;
   height: 24px;
+}
+
+/* Add Item Page Description */
+
+.enter-item-name {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.enter-item-description {
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.new-item-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-item-name-input {
+  border-radius: 5px;
+  height: 20px;
+  width: 330px;
+}
+
+.new-item-description-input {
+  border-radius: 5px;
+  border-width: 1.6px;
+  min-width: 330px;
+  max-width: 330px;
+}
+
+.check-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+}
+
+.check-status {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.add-item-input-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  height: 30px;
+  width: 80px;
+  margin-top: 20px;
 }
 
 /* Dropdown Styles */
@@ -404,7 +477,9 @@ body {
 .add-collection-button:active,
 .add-collection-item-button:active,
 .add-collection-input-button:active,
-.delete-collection-button:active {
+.delete-collection-button:active,
+.back-button:active,
+.add-item-input-button:active {
   background: rgb(212, 212, 212);
 }
 

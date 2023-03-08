@@ -58,7 +58,6 @@ profiles, setProfiles}) {
 
         <h2 className="enter-item-description">Enter item description</h2>
         <textarea className="new-item-description-input"
-          maxLength='300'
           required
           value={newItemDescription}
           onChange={(e) => setNewItemDescription(e.target.value)}

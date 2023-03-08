@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AddCollectionItemPage from "./AddCollectionItemPage";
 import AddCollectionPage from "./AddCollectionPage";
 import CollectionDetailsPage from "./CollectionDetailsPage";
@@ -5,6 +6,19 @@ import CollectionDetailsPage from "./CollectionDetailsPage";
 function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown,
 profiles, setProfiles, currentCollection, setCurrentCollection, visibleWindow,
 setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
+
+  const [currentItem, setCurrentItem] = useState({
+    name: ''
+  });
+
+  function handleWindowToDetails(e) {
+    setVisibleWindow('collection-details');
+    for (const item of currentCollection.collectionItems) {
+      if (item.id === Number(e.target.id)) {
+        setCurrentItem(item);
+      }
+    }
+  }
 
   function handlePageToAccounts() {
     setVisiblePage('Account Manager');
@@ -111,7 +125,7 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
         </div>  
         {visibleWindow === 'none' &&
         <div className="no-collection-container">
-          <h2>No Collection Selected</h2>
+          <h2 className="no-collection-selected">No Collection Selected</h2>
         </div>}
         {visibleWindow === 'collection-items' &&
         <div className="collection-handler">
@@ -128,7 +142,7 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
                   <div className="collection-text">
                     <p className="item-name">{item.name}</p>
                     <div className="item-details-button-container">
-                      <button className="item-details-button" onClick={() => setVisibleWindow('collection-details')}>
+                      <button className="item-details-button" id={item.id} onClick={(event) => handleWindowToDetails(event)}>
                         Details
                       </button>
                     </div>
@@ -152,7 +166,7 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
           </div>
         </div>}
         {visibleWindow === 'collection-details' &&
-        <CollectionDetailsPage handleWindowBack={handleWindowBack}/>}
+        <CollectionDetailsPage handleWindowBack={handleWindowBack} currentItem={currentItem}/>}
         {visibleWindow === 'add-collection' &&
         <AddCollectionPage handleWindowBack={handleWindowBack} currentProfile={currentProfile}
         profiles={profiles} setProfiles={setProfiles} setCurrentCollection={setCurrentCollection} 

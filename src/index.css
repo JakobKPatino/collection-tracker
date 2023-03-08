@@ -359,7 +359,8 @@ body {
 
 .add-collection-page-container,
 .add-item-page-container,
-.no-collection-container {
+.no-collection-container,
+.collection-details-page-container {
   border: 1px solid black;
   width: 100%;
   display: flex;
@@ -369,7 +370,12 @@ body {
   border-bottom-right-radius: 8px;
 }
 
-.enter-collection-name {
+.no-collection-selected {
+  margin: 10px 0px;
+}
+
+.enter-collection-name,
+.enter-item-name {
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -393,11 +399,6 @@ body {
 }
 
 /* Add Item Page Description */
-
-.enter-item-name {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
 
 .enter-item-description {
   margin-top: 25px;
@@ -451,6 +452,53 @@ body {
   margin-top: 20px;
 }
 
+/* Item Details Page Styles */
+
+.collection-details-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-name-header {
+  margin: 10px 0px;
+  text-align: center;
+  width: 500px;
+  overflow-wrap: break-word;
+}
+
+.item-status {
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+.description {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  white-space: pre-wrap;
+  text-align: left;
+  width: 600px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.delete-item-button,
+.edit-item-button {
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  height: 30px;
+  width: 80px;
+}
+
 /* Dropdown Styles */
 
 .nav-profile-dropdown-items,
@@ -479,7 +527,9 @@ body {
 .add-collection-input-button:active,
 .delete-collection-button:active,
 .back-button:active,
-.add-item-input-button:active {
+.add-item-input-button:active,
+.delete-item-button:active,
+.edit-item-button:active {
   background: rgb(212, 212, 212);
 }
 

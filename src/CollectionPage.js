@@ -69,7 +69,7 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }
 
-  function handleDeleteCollection(event) {
+  function handleDeleteCollection() {
     let updatedCollections = [];
     let newId = 0;
     for (const collection of currentProfile.collections) {
@@ -80,11 +80,6 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
       }
     }
     currentProfile.collections = updatedCollections;
-    setCurrentCollectionName('Select collection');
-    setCurrentCollection({
-      collectionItems: [],
-    });
-    setVisibleWindow('none');
 
     let updatedProfiles = [];
     for (let profile of profiles) {
@@ -96,6 +91,12 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
 
     localStorage.setItem('profiles', JSON.stringify(updatedProfiles));
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
+
+    setCurrentCollectionName('Select collection');
+    setCurrentCollection({
+      collectionItems: [],
+    });
+    setVisibleWindow('none');
   }
 
   return (
@@ -166,7 +167,9 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
           </div>
         </div>}
         {visibleWindow === 'collection-details' &&
-        <CollectionDetailsPage handleWindowBack={handleWindowBack} currentItem={currentItem}/>}
+        <CollectionDetailsPage handleWindowBack={handleWindowBack} currentItem={currentItem}
+        setCurrentItem={setCurrentItem} profiles={profiles} setProfiles={setProfiles}
+        currentProfile={currentProfile} currentCollection={currentCollection} setVisibleWindow={setVisibleWindow}/>}
         {visibleWindow === 'add-collection' &&
         <AddCollectionPage handleWindowBack={handleWindowBack} currentProfile={currentProfile}
         profiles={profiles} setProfiles={setProfiles} setCurrentCollection={setCurrentCollection} 

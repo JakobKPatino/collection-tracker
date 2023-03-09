@@ -56,21 +56,19 @@ profiles, setProfiles}) {
           onChange={(e) => setNewItemName(e.target.value)}
         />
 
+        <h2 className="check-status">Item owned?</h2>
+        <input className="checkbox"
+          type='checkbox'
+          id="item-status"
+          onChange={(e) => setNewItemStatus(e.target.checked)}
+        />
+
         <h2 className="enter-item-description">Enter item description</h2>
         <textarea className="new-item-description-input"
           required
           value={newItemDescription}
           onChange={(e) => setNewItemDescription(e.target.value)}
         ></textarea>
-
-        <div className="check-status-container">
-          <h2 className="check-status">Item owned?</h2>
-          <input className="checkbox"
-            type='checkbox'
-            id="item-status"
-            onChange={(e) => setNewItemStatus(e.target.checked)}
-          />
-        </div>
 
         <button className="add-item-input-button">Add item</button>
       </form>

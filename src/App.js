@@ -19,10 +19,11 @@ function App() {
   });
 
   useEffect(() => {
-    
     document.title = 'Collection Tracker';
+    localStorage.clear();
+    const emptyProfiles = []
     if (JSON.parse(window.localStorage.getItem('profiles')) === null) {
-      localStorage.setItem('profiles', JSON.stringify([]));
+      localStorage.setItem('profiles', JSON.stringify(emptyProfiles));
     }
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }, []);
@@ -104,6 +105,7 @@ function App() {
             handleToggleDropdown('collections');
       }
     }
+    console.log(profiles);
   }
 
   return (

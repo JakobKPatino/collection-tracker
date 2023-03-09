@@ -18,10 +18,10 @@ function App() {
     name: ''
   });
 
-  useEffect((profiles) => {
+  useEffect(() => {
     document.title = 'Collection Tracker';
     if (JSON.parse(window.localStorage.getItem('profiles')) === null) {
-      localStorage.setItem('profiles', JSON.stringify(profiles));
+      localStorage.setItem('profiles', JSON.stringify([]));
     }
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }, []);

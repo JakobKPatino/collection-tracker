@@ -3,8 +3,9 @@ import CollectionPage from "./CollectionPage";
 
 function Body({profiles, handleProfileSelection,
   handleToggleDropdown, setProfiles, currentProfile, visiblePage, 
-  setVisiblePage, currentCollection, setCurrentCollection, visibleWindow,
-  setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
+  currentCollection, setCurrentCollection, visibleWindow,
+  setVisibleWindow, currentCollectionName, setCurrentCollectionName,
+  currentItem, setCurrentItem}) {
 
   return (
     <main>
@@ -16,7 +17,8 @@ function Body({profiles, handleProfileSelection,
       setProfiles={setProfiles} currentCollection={currentCollection}
       setCurrentCollection={setCurrentCollection} visibleWindow={visibleWindow}
       setVisibleWindow={setVisibleWindow} currentCollectionName={currentCollectionName}
-      setCurrentCollectionName={setCurrentCollectionName}/>}
+      setCurrentCollectionName={setCurrentCollectionName} currentItem={currentItem}
+      setCurrentItem={setCurrentItem}/>}
     </main>
   );
 }

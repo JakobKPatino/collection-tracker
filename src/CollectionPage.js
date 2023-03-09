@@ -1,15 +1,11 @@
-import { useState } from "react";
 import AddCollectionItemPage from "./AddCollectionItemPage";
 import AddCollectionPage from "./AddCollectionPage";
 import CollectionDetailsPage from "./CollectionDetailsPage";
 
 function CollectionPage({currentProfile, handleToggleDropdown,
 profiles, setProfiles, currentCollection, setCurrentCollection, visibleWindow,
-setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
-
-  const [currentItem, setCurrentItem] = useState({
-    name: ''
-  });
+setVisibleWindow, currentCollectionName, setCurrentCollectionName,
+currentItem, setCurrentItem}) {
 
   function handleWindowToDetails(e) {
     setVisibleWindow('collection-details');

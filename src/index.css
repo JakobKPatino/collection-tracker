@@ -11,7 +11,7 @@ body {
 .navbar {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 82%;
   height: 120px;
   margin: 0 auto;
   justify-content: space-between;
@@ -25,20 +25,31 @@ body {
   background-color: white;
 }
 
-.home {
+.home-navbar,
+.collections-navbar {
   position: absolute;
-  width: 80px;
-  height: 30px;
-  left: -80px;
-  top: calc(50% - 15px);
   border: none;
   background: transparent;
   text-decoration: underline;
   font-size: 20px;
+  height: 30px;
 }
 
-.home:active {
+.home-navbar {
+  width: 80px;
+  left: -80px;
+  top: calc(50% - 15px);
+}
+
+.home-navbar:active,
+.collections-navbar:active {
   opacity: 60%;
+}
+
+.collections-navbar {
+  width: 100px;
+  left: -180px;
+  top: calc(50% - 15px);
 }
 
 .webpage-title {

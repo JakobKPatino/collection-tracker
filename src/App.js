@@ -14,6 +14,9 @@ function App() {
   });
   const [currentCollectionName, setCurrentCollectionName] = useState('Select collection');
   const [visibleWindow, setVisibleWindow] = useState('none');
+  const [currentItem, setCurrentItem] = useState({
+    name: ''
+  });
 
   useEffect(() => {
     document.title = 'Collection Tracker';
@@ -107,10 +110,11 @@ function App() {
       <div className="Body">
         <Body profiles={profiles} handleProfileSelection={handleProfileSelection} 
         handleToggleDropdown={handleToggleDropdown} setProfiles={setProfiles}
-        currentProfile={currentProfile} visiblePage={visiblePage} setVisiblePage={setVisiblePage}
+        currentProfile={currentProfile} visiblePage={visiblePage}
         currentCollection={currentCollection} setCurrentCollection={setCurrentCollection} 
         visibleWindow={visibleWindow} setVisibleWindow={setVisibleWindow} 
-        currentCollectionName={currentCollectionName} setCurrentCollectionName={setCurrentCollectionName}/>
+        currentCollectionName={currentCollectionName} setCurrentCollectionName={setCurrentCollectionName}
+        currentItem={currentItem} setCurrentItem={setCurrentItem}/>
       </div>
     </div>
   );

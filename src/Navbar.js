@@ -16,9 +16,13 @@ function Navbar({profiles, currentProfileName,
         </button>
         <ProfileDropdown profiles={profiles} handleProfileSelection={handleProfileSelection}
         profileDropdownItems={'nav-profile-dropdown-items'} buttonAction={'login'}/>
-        <button className='home' onClick={() => setVisiblePage('Account Manager')}>
+        <button className='home-navbar' onClick={() => setVisiblePage('Account Manager')}>
           Home
         </button>
+        {currentProfileName !== 'Login' && 
+        <button className='collections-navbar' onClick={() => setVisiblePage('Collection Page')}>
+          Collections
+        </button>}
       </div>  
       
 

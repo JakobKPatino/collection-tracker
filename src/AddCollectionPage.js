@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function AddCollectionPage({handleWindowBack, currentProfile, profiles, setProfiles,
-setCurrentCollection, setCurrentCollectionName}) {
+setCurrentCollection, setCurrentCollectionName, setVisibleWindow}) {
 
   const [newCollectionName, setNewCollectionName] = useState('');
 
@@ -34,7 +34,7 @@ setCurrentCollection, setCurrentCollectionName}) {
         setCurrentCollection(collection);
       }
     }
-    handleWindowBack();
+    setVisibleWindow('collection-items');
   }
 
   return (

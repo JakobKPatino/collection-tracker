@@ -165,7 +165,7 @@ currentItem, setCurrentItem}) {
         {visibleWindow === 'add-collection' &&
         <AddCollectionPage handleWindowBack={handleWindowBack} currentProfile={currentProfile}
         profiles={profiles} setProfiles={setProfiles} setCurrentCollection={setCurrentCollection} 
-        setCurrentCollectionName={setCurrentCollectionName}/>}
+        setCurrentCollectionName={setCurrentCollectionName} setVisibleWindow={setVisibleWindow}/>}
         {visibleWindow === 'add-collection-item' &&
         <AddCollectionItemPage handleWindowBack={handleWindowBack} currentCollection={currentCollection}
         currentProfile={currentProfile} profiles={profiles} setProfiles={setProfiles}/>}

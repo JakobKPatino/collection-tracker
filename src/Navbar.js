@@ -2,9 +2,7 @@ import profilePicture from './images/joshu.jpg';
 import ProfileDropdown from './ProfileDropdown';
 
 function Navbar({profiles, currentProfileName, 
-  handleProfileSelection, handleToggleDropdown}) {
-
-  
+  handleProfileSelection, handleToggleDropdown, setVisiblePage}) {
 
   return (
     <nav className="navbar">
@@ -18,6 +16,9 @@ function Navbar({profiles, currentProfileName,
         </button>
         <ProfileDropdown profiles={profiles} handleProfileSelection={handleProfileSelection}
         profileDropdownItems={'nav-profile-dropdown-items'} buttonAction={'login'}/>
+        <button className='home' onClick={() => setVisiblePage('Account Manager')}>
+          Home
+        </button>
       </div>  
       
 

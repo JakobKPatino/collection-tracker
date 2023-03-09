@@ -103,7 +103,7 @@ function App() {
     <div className="App">
       <Navbar profiles={profiles} currentProfileName={currentProfileName} 
       handleProfileSelection={handleProfileSelection}
-      handleToggleDropdown={handleToggleDropdown}/>
+      handleToggleDropdown={handleToggleDropdown} setVisiblePage={setVisiblePage}/>
       <div className="Body">
         <Body profiles={profiles} handleProfileSelection={handleProfileSelection} 
         handleToggleDropdown={handleToggleDropdown} setProfiles={setProfiles}

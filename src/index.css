@@ -25,6 +25,22 @@ body {
   background-color: white;
 }
 
+.home {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  left: -80px;
+  top: calc(50% - 15px);
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.home:active {
+  opacity: 60%;
+}
+
 .webpage-title {
   margin: 0px;
   margin-left: 40px;
@@ -57,7 +73,6 @@ body {
   font-size: 20px;
   margin: 0 10px;
   font-weight: bold;
-  position: relative;
 }
 
 .profile-picture {

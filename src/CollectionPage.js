@@ -3,7 +3,7 @@ import AddCollectionItemPage from "./AddCollectionItemPage";
 import AddCollectionPage from "./AddCollectionPage";
 import CollectionDetailsPage from "./CollectionDetailsPage";
 
-function CollectionPage({setVisiblePage, currentProfile, handleToggleDropdown,
+function CollectionPage({currentProfile, handleToggleDropdown,
 profiles, setProfiles, currentCollection, setCurrentCollection, visibleWindow,
 setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
 
@@ -18,10 +18,6 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
         setCurrentItem(item);
       }
     }
-  }
-
-  function handlePageToAccounts() {
-    setVisiblePage('Account Manager');
   }
 
   function handleCollectionSelection(collection) {
@@ -177,9 +173,6 @@ setVisibleWindow, currentCollectionName, setCurrentCollectionName}) {
         {visibleWindow === 'add-collection-item' &&
         <AddCollectionItemPage handleWindowBack={handleWindowBack} currentCollection={currentCollection}
         currentProfile={currentProfile} profiles={profiles} setProfiles={setProfiles}/>}
-        <button className="change" onClick={handlePageToAccounts}>
-            Go to Account Manager
-        </button>
       </div>
     </main>
   );

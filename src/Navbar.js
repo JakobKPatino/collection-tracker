@@ -1,4 +1,4 @@
-import profilePicture from './images/joshu.jpg';
+import profilePicture from './images/profile-icon.jpg';
 import ProfileDropdown from './ProfileDropdown';
 
 function Navbar({profiles, currentProfileName, 

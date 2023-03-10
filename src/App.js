@@ -23,7 +23,6 @@ function App() {
     const emptyProfiles = []
     if (window.localStorage.getItem('profiles') === null) {
       localStorage.setItem('profiles', JSON.stringify(emptyProfiles));
-      console.log(JSON.parse(window.localStorage.getItem('profiles')))
     }
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }, []);

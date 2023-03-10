@@ -20,8 +20,10 @@ function App() {
 
   useEffect(() => {
     document.title = 'Collection Tracker';
+    const emptyProfiles = []
     if (localStorage.length === 0) {
-      localStorage.setItem('profiles', JSON.stringify([]));
+      localStorage.setItem('profiles', JSON.stringify(emptyProfiles));
+      console.log(JSON.parse(window.localStorage.getItem('profiles')))
     }
     setProfiles(JSON.parse(window.localStorage.getItem('profiles')));
   }, []);
